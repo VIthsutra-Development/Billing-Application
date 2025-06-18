@@ -1,0 +1,2 @@
+/home/vsense/Documents/flutter_clean_architecture/billing-application/android/app/.cxx/RelWithDebInfo/144w5ti6/x86/CMakeFiles/edit_cache.dir
+/home/vsense/Documents/flutter_clean_architecture/billing-application/android/app/.cxx/RelWithDebInfo/144w5ti6/x86/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+/Users/sumithks/Development/code/billing-application/android/app/.cxx/RelWithDebInfo/3h21g634/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/sumithks/Development/code/billing-application/android/app/.cxx/RelWithDebInfo/3h21g634/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+/home/vsense/Documents/flutter_clean_architecture/billing-application/android/app/.cxx/Debug/g226g155/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/vsense/Documents/flutter_clean_architecture/billing-application/android/app/.cxx/Debug/g226g155/armeabi-v7a/CMakeFiles/rebuild_cache.dir

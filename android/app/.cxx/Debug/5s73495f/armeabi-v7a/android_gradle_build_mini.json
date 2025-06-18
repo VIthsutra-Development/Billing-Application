@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/sumithks/Development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/sumithks/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/sumithks/Development/code/billing-application/android/app/.cxx/Debug/5s73495f/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/sumithks/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/sumithks/Development/code/billing-application/android/app/.cxx/Debug/5s73495f/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
