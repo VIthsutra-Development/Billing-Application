@@ -87,7 +87,7 @@ class UpdatePaymentBottomSheet extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => PDFScreen(
-                    pdfUrl: "${AppUrls.downloadInvoice}/$invoiceId",
+                    pdfUrl: "${AppUrls.getInvoice}/$invoiceId",
                   ),
                 ),
               );

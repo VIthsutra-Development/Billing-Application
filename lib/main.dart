@@ -22,7 +22,7 @@ class BillingApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: Routes.onGenerate,
-      initialRoute: "/splash",
+      initialRoute: "/otp",
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,

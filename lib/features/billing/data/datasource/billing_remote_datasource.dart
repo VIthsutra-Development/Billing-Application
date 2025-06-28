@@ -39,7 +39,7 @@ class BillingRemoteDatasourceImpl implements BillingRemoteDatasource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getReceivers}/$userId"),
+        Uri.parse("${AppUrls.getReceiver}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
@@ -114,7 +114,7 @@ class BillingRemoteDatasourceImpl implements BillingRemoteDatasource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getConsignees}/$userId"),
+        Uri.parse("${AppUrls.getShipper}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
@@ -155,6 +155,7 @@ class BillingRemoteDatasourceImpl implements BillingRemoteDatasource {
           message: "Not Connected To Internet.",
         );
       }
+      print(jsonEncode(billingDetails.toJson()));
       final jsonResponse = await http.post(
         Uri.parse(AppUrls.createInvoice),
         body: jsonEncode(billingDetails.toJson()),
@@ -181,7 +182,7 @@ class BillingRemoteDatasourceImpl implements BillingRemoteDatasource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getBank}/$userId"),
+        Uri.parse("${AppUrls.getBanker}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);

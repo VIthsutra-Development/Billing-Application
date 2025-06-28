@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_billing/features/authentication/domain/usecases/forgotpass_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/login_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/register_usecase.dart';
 
@@ -9,14 +10,18 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final LoginUsecase _loginUsecase;
   final RegisterUsecase _registerUsecase;
+  final ForgotPassUsecase _forgotPassUsecase;
   AuthBloc({
     required LoginUsecase loginUsecase,
     required RegisterUsecase registerUsecase,
+    required ForgotPassUsecase forgotPassUsecase,
   })  : _loginUsecase = loginUsecase,
         _registerUsecase = registerUsecase,
+        _forgotPassUsecase = forgotPassUsecase,
         super(AuthInitial()) {
     on<AuthLoginEvent>(_authLogin);
     on<AuthRegisterEvent>(_authRegister);
+    on<AuthForgotPassEvent>(_authForgotPass);
   }
 
   Future<void> _authLogin(
@@ -77,5 +82,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         );
       },
     );
+  }
+  Future<void>_authForgotPass(
+    AuthForgotPassEvent event,Emitter<AuthState> emit,
+  )async{
+    emit(AuthLoadingState());
+    final response = await _forgotPassUsecase(ForgotPassParams(email: event.email));
+    response.fold((fail){emit(AuthFailureState(message: fail.message));}, (success){emit(AuthSuccessState(message: success));});
   }
 }

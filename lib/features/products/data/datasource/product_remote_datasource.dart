@@ -32,7 +32,7 @@ class ProductRemoteDatasourceImpl implements ProductRemoteDatasource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.post(
-        Uri.parse(AppUrls.addProducts),
+        Uri.parse(AppUrls.createProduct),
         body: jsonEncode(productDetails.toJson()),
         headers: {"Content-Type": "application/json"},
       );
@@ -57,7 +57,7 @@ class ProductRemoteDatasourceImpl implements ProductRemoteDatasource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.delete(
-        Uri.parse("${AppUrls.deleteProducts}/$productId"),
+        Uri.parse("${AppUrls.deleteProduct}/$productId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
@@ -81,7 +81,7 @@ class ProductRemoteDatasourceImpl implements ProductRemoteDatasource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getProducts}/$invoiceId"),
+        Uri.parse("${AppUrls.getProduct}/$invoiceId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);

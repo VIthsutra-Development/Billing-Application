@@ -32,7 +32,7 @@ class CustomerRemoteDataSourceImpl implements CustomerRemoteDataSource {
         throw ServerException(message: "Not Connected to Internet.");
       }
       final jsonResponse = await client.post(
-        Uri.parse(AppUrls.addReciver),
+        Uri.parse(AppUrls.createReceiver),
         body: jsonEncode(customerModel.toJson()),
         headers: {"Content-Type": "application/json"},
       );
@@ -59,7 +59,7 @@ class CustomerRemoteDataSourceImpl implements CustomerRemoteDataSource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getReceivers}/$userId"),
+        Uri.parse("${AppUrls.getReceiver}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
@@ -92,7 +92,7 @@ class CustomerRemoteDataSourceImpl implements CustomerRemoteDataSource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.delete(
-        Uri.parse("${AppUrls.deleteRecivers}/$customerId"),
+        Uri.parse("${AppUrls.deleteReceiver}/$customerId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);

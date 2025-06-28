@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_billing/features/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:new_billing/features/authentication/presentation/cubit/auto_login_cubit.dart';
+import 'package:new_billing/features/authentication/presentation/pages/forgot_Pass.dart';
 import 'package:new_billing/features/authentication/presentation/pages/login.dart';
+import 'package:new_billing/features/authentication/presentation/pages/otp.dart';
 import 'package:new_billing/features/authentication/presentation/pages/register.dart';
 import 'package:new_billing/features/bank/presentation/cubit/add_bank_cubit.dart';
 import 'package:new_billing/features/bank/presentation/cubit/delete_bank_cubit.dart';
@@ -43,13 +45,14 @@ class Routes {
   static Route? onGenerate(RouteSettings settings) {
     const String splash = "/splash";
     const String login = "/login";
+    const String otp = "/otp";
     const String register = "/register";
     const String home = "/home";
     const String history = "/history";
     const String logistics = "/logistics";
     const String firms = "/firms";
     const String customers = "/customers";
-
+    const String forgotPass = "/forgotpass";
     const String billing = "/billing";
     const String products = "/products";
     const String banks = "/banks";
@@ -212,6 +215,14 @@ class Routes {
             child: FirmPage(),
           ),
         );
+      case forgotPass:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => serviceLocator<AuthBloc>(),
+                  child: ForgotPass(),
+                ));
+      case otp:
+        return MaterialPageRoute(builder: (context) => Otp());
     }
     return null;
   }

@@ -6,6 +6,7 @@ import 'package:new_billing/features/authentication/data/datasources/auth_remote
 import 'package:new_billing/features/authentication/data/repository/auth_repository_impl.dart';
 import 'package:new_billing/features/authentication/domain/repository/auth_repository.dart';
 import 'package:new_billing/features/authentication/domain/usecases/auto_login_usecase.dart';
+import 'package:new_billing/features/authentication/domain/usecases/forgotpass_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/login_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/register_usecase.dart';
 import 'package:new_billing/features/authentication/presentation/bloc/auth_bloc.dart';

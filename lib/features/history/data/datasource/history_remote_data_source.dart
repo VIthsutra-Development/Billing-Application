@@ -32,7 +32,7 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.fetchInvoices}/$userId"),
+        Uri.parse("${AppUrls.getInvoice}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
@@ -59,7 +59,7 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
   Future<String> markAsPaid({required String invoiceId}) async {
     try {
       final jsonResponse = await client.patch(
-        Uri.parse("${AppUrls.makePayment}/$invoiceId"),
+        Uri.parse("${AppUrls.url}/$invoiceId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);

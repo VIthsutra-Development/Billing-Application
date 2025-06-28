@@ -58,11 +58,16 @@ void _initAuth() {
         authRepository: serviceLocator(),
       ),
     )
+    ..registerLazySingleton(
+      () => ForgotPassUsecase(
+        authRepository: serviceLocator(),
+      ),
+    )
     ..registerFactory(
       () => AuthBloc(
-        loginUsecase: serviceLocator(),
-        registerUsecase: serviceLocator(),
-      ),
+          loginUsecase: serviceLocator(),
+          registerUsecase: serviceLocator(),
+          forgotPassUsecase: serviceLocator()),
     )
     ..registerFactory(
       () => AutoLoginCubit(

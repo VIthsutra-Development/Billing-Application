@@ -4,12 +4,14 @@ import "package:http/http.dart" as http;
 import "package:new_billing/core/constants/urls.dart";
 import "package:new_billing/core/failures/exceptions.dart";
 import "package:new_billing/core/utils/connection/connection.dart";
+import "package:new_billing/features/authentication/data/models/forgot_pass.dart";
 import "package:new_billing/features/authentication/data/models/login_model.dart";
 import "package:new_billing/features/authentication/data/models/register_model.dart";
 
 abstract interface class AuthRemoteDataSource {
   Future<String> login({required LoginModel loginDetails});
   Future<String> register({required RegisterModel registerDetails});
+  Future<String> forgotPass({required ForgotPassModel forgotDetails});
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -31,7 +33,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       if (jsonResponse.statusCode != 200) {
         throw ServerException(message: response["error"]);
       }
-      return response["data"]["token"];
+      return response["data"]["token_id"];
     } on ServerException catch (e) {
       throw ServerException(message: e.message);
     } catch (e) {
@@ -53,12 +55,35 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
+      if (jsonResponse.statusCode != 201) {
+        throw ServerException(message: response["error"]);
+      }
+      return response["data"];
+    } on ServerException catch (e) {
+      throw ServerException(message: e.message);
+    } catch (e) {
+      throw ServerException(
+        message: "Exception While Communicating With The Server.",
+      );
+    }
+  }
+
+  @override
+  Future<String> forgotPass({required ForgotPassModel forgotDetails}) async {
+    try {
+      if (!await connection.checkConnection()) {
+        throw ServerException(message: "Not Connected To Internet.");
+      }
+      final jsonResponse = await client.post(
+        Uri.parse(AppUrls.forgotPass),
+        body: jsonEncode(forgotDetails.toJson()),
+        headers: {"Content-Type": "application/json"},
+      );
+      final response = jsonDecode(jsonResponse.body);
       if (jsonResponse.statusCode != 200) {
         throw ServerException(message: response["error"]);
       }
-      return response["data"]["token"];
-    } on ServerException catch (e) {
-      throw ServerException(message: e.message);
+      return response["message"];
     } catch (e) {
       throw ServerException(
         message: "Exception While Communicating With The Server.",

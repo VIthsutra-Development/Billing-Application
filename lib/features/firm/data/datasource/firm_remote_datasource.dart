@@ -32,7 +32,7 @@ class FirmRemoteDataSourceImpl implements FirmRemoteDataSource {
       if (!await connection.checkConnection()) {
         throw ServerException(message: "Not Connected to Internet.");
       }
-      final request = http.MultipartRequest("POST", Uri.parse(AppUrls.addBiller));
+      final request = http.MultipartRequest("POST", Uri.parse(AppUrls.createBiller));
       request.files.add(
         await http.MultipartFile.fromPath(
           "logo",

@@ -137,7 +137,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       controller: _phoneController,
                       hintText: "Phone number",
                       prefixIcon: Icons.phone_iphone_rounded,
-                      keyboardType: TextInputType.text,
+                      keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value!.trim().isEmpty) {
                           return "Please enter a phone number";

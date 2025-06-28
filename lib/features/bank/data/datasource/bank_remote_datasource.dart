@@ -32,7 +32,7 @@ class BankRemoteDataSourceImpl implements BankRemoteDataSource {
         throw ServerException(message: "Not Connected to Internet.");
       }
       final jsonResponse = await client.post(
-        Uri.parse(AppUrls.addBank),
+        Uri.parse(AppUrls.createBank),
         body: jsonEncode(bankModel.toJson()),
         headers: {"Content-Type": "application/json"},
       );
@@ -59,7 +59,7 @@ class BankRemoteDataSourceImpl implements BankRemoteDataSource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getBank}/$userId"),
+        Uri.parse("${AppUrls.getBanker}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);

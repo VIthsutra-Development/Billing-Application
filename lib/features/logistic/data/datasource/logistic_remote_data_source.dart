@@ -32,7 +32,7 @@ class LogisticRemoteDataSourceImpl implements LogisticRemoteDataSource {
         throw ServerException(message: "Not Connected to Internet.");
       }
       final jsonResponse = await client.post(
-        Uri.parse(AppUrls.addShipper),
+        Uri.parse(AppUrls.createShipper),
         body: jsonEncode(logisticModel.toJson()),
         headers: {"Content-Type": "application/json"},
       );
@@ -59,7 +59,7 @@ class LogisticRemoteDataSourceImpl implements LogisticRemoteDataSource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.get(
-        Uri.parse("${AppUrls.getConsignees}/$userId"),
+        Uri.parse("${AppUrls.getShipper}/$userId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
@@ -92,7 +92,7 @@ class LogisticRemoteDataSourceImpl implements LogisticRemoteDataSource {
         throw ServerException(message: "Not Connected To Internet.");
       }
       final jsonResponse = await client.delete(
-        Uri.parse("${AppUrls.deleteConsignee}/$logisticId"),
+        Uri.parse("${AppUrls.deleteShipper}/$logisticId"),
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);

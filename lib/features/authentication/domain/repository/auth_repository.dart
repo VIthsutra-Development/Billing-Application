@@ -11,5 +11,8 @@ abstract interface class AuthRepository {
     required String email,
     required String password, required userPhone,
   });
+  Future<Either<Failure,String>>forgotPass({
+    required String email,
+  });
   Future<Either<Failure,String?>> autoLogin();
 }

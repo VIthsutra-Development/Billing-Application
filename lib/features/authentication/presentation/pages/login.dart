@@ -127,6 +127,17 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 10,
                     ),
+                    Align(
+                        alignment: Alignment(1, 0),
+                        child: GestureDetector(
+                          onTap: () =>
+                              Navigator.pushNamed(context, '/forgotpass'),
+                          child: Text("Forgot Password",
+                              style: TextStyle(color: AppColors.blue)),
+                        )),
+                    SizedBox(
+                      height: 10,
+                    ),
                     BlocBuilder<AuthBloc, AuthState>(
                       builder: (context, state) {
                         return AppFilledButton(
