@@ -8,6 +8,7 @@ import 'package:new_billing/features/authentication/domain/repository/auth_repos
 import 'package:new_billing/features/authentication/domain/usecases/auto_login_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/forgotpass_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/login_usecase.dart';
+import 'package:new_billing/features/authentication/domain/usecases/otp_usecase.dart';
 import 'package:new_billing/features/authentication/domain/usecases/register_usecase.dart';
 import 'package:new_billing/features/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:new_billing/features/authentication/presentation/cubit/auto_login_cubit.dart';

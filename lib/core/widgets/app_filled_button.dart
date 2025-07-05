@@ -24,23 +24,22 @@ class AppFilledButton extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         backgroundColor: color,
       ),
-      child:
-          isLoading
-              ? SizedBox(
-                width: 20,
-                height: 20,
-                child: CircularProgressIndicator(
-                  color: color,
-                  strokeCap: StrokeCap.round,
-                  strokeWidth: 2.5,
-                ),
-              )
-              : Text(
-                buttonText,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleMedium?.copyWith(color: AppColors.white),
+      child: isLoading
+          ? SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(
+                color: color,
+                strokeCap: StrokeCap.round,
+                strokeWidth: 2.5,
               ),
+            )
+          : Text(
+              buttonText,
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(color: AppColors.white),
+            ),
     );
   }
 }

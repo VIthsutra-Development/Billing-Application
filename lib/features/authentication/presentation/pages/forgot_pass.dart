@@ -22,7 +22,7 @@ class _ForgotPassState extends State<ForgotPass> {
           Navigator.pushNamed(context, "/otp");
         }
         if (state is AuthFailureState) {
-              ScaffoldMessenger.of(context).showSnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(
             AppSnackBar(message: state.message).build(context),
           );
         }

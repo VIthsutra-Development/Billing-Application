@@ -6,6 +6,7 @@ import 'package:new_billing/features/authentication/presentation/pages/forgot_Pa
 import 'package:new_billing/features/authentication/presentation/pages/login.dart';
 import 'package:new_billing/features/authentication/presentation/pages/otp.dart';
 import 'package:new_billing/features/authentication/presentation/pages/register.dart';
+import 'package:new_billing/features/authentication/presentation/pages/reset_pass.dart';
 import 'package:new_billing/features/bank/presentation/cubit/add_bank_cubit.dart';
 import 'package:new_billing/features/bank/presentation/cubit/delete_bank_cubit.dart';
 import 'package:new_billing/features/bank/presentation/cubit/fetch_bank_cubit.dart';
@@ -56,6 +57,7 @@ class Routes {
     const String billing = "/billing";
     const String products = "/products";
     const String banks = "/banks";
+    const String resetPass = "/resetPass";
     switch (settings.name) {
       case splash:
         return MaterialPageRoute(
@@ -223,6 +225,9 @@ class Routes {
                 ));
       case otp:
         return MaterialPageRoute(builder: (context) => Otp());
+
+      case resetPass:
+        return MaterialPageRoute(builder: (context) => ResetPass());
     }
     return null;
   }

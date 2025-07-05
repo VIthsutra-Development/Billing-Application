@@ -25,7 +25,9 @@ class _CustomMapDropDownState extends State<CustomMapDropDown> {
     return DropdownMenu<String>(
       controller: widget.dropDownController,
       width: MediaQuery.of(context).size.width,
-      initialSelection: widget.list.isNotEmpty ? widget.list.first[widget.valueKey].toString() : null,
+      initialSelection: widget.list.isNotEmpty
+          ? widget.list.first[widget.valueKey].toString()
+          : null,
       onSelected: (String? value) {
         setState(() {
           selectedId = value;
@@ -41,4 +43,3 @@ class _CustomMapDropDownState extends State<CustomMapDropDown> {
     );
   }
 }
-

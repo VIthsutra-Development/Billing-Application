@@ -3,7 +3,7 @@ import 'package:new_billing/core/failures/failure.dart';
 import 'package:new_billing/core/usecase/usecase.dart';
 import 'package:new_billing/features/authentication/domain/repository/auth_repository.dart';
 
-class AutoLoginUsecase implements Usecase<String?,AutoLoginParams>{
+class AutoLoginUsecase implements Usecase<String?, AutoLoginParams> {
   final AuthRepository authRepository;
   AutoLoginUsecase({required this.authRepository});
   @override
@@ -12,4 +12,4 @@ class AutoLoginUsecase implements Usecase<String?,AutoLoginParams>{
   }
 }
 
-class AutoLoginParams{}
+class AutoLoginParams {}

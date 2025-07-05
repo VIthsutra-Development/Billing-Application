@@ -8,6 +8,7 @@ class CustomAppBar {
     box.delete("token");
     box.close();
   }
+
   PreferredSizeWidget? build(BuildContext context, [bool isHomePage = false]) {
     return AppBar(
       title: Text("Billsoft"),

@@ -9,10 +9,13 @@ abstract interface class AuthRepository {
   Future<Either<Failure, String>> register({
     required String userName,
     required String email,
-    required String password, required userPhone,
+    required String password,
+    required userPhone,
   });
-  Future<Either<Failure,String>>forgotPass({
+  Future<Either<Failure, String>> forgotPass({
     required String email,
   });
-  Future<Either<Failure,String?>> autoLogin();
+  Future<Either<Failure, String>> validateOtp({required String otp});
+
+  Future<Either<Failure, String?>> autoLogin();
 }

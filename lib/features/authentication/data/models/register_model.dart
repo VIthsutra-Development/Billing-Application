@@ -5,7 +5,7 @@ class RegisterModel extends RegisterEntity {
     required super.userName,
     required super.email,
     required super.password,
-    required super.userPhone, 
+    required super.userPhone,
   });
 
   Map<String, dynamic> toJson() {

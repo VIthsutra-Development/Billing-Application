@@ -26,6 +26,6 @@ class RegisterParams {
     required this.userName,
     required this.email,
     required this.password,
-    required this.userPhone, 
+    required this.userPhone,
   });
 }

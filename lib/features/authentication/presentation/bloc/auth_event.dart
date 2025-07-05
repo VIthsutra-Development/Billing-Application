@@ -20,7 +20,13 @@ final class AuthRegisterEvent extends AuthEvent {
       required this.password,
       required this.userPhone});
 }
-final class AuthForgotPassEvent extends AuthEvent{
+
+final class AuthForgotPassEvent extends AuthEvent {
   final String email;
   AuthForgotPassEvent({required this.email});
+}
+
+final class AuthOtpEvent extends AuthEvent {
+  final String otp;
+  AuthOtpEvent({required this.otp});
 }
