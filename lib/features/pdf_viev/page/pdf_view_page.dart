@@ -44,7 +44,7 @@ class _PDFScreenState extends State<PDFScreen> {
         throw Exception("Failed to load PDF");
       }
     } catch (e) {
-      print("Error loading PDF: $e");
+      // print("Error loading PDF: $e");
       setState(() {
         isLoading = false;
       });
@@ -124,7 +124,7 @@ class _PDFScreenState extends State<PDFScreen> {
         SnackBar(content: Text("PDF Saved to: $filePath")),
       );
     } catch (e) {
-      print("Error saving PDF: $e");
+      // print("Error saving PDF: $e");
       setState(() {
         isDownloading = false;
       });

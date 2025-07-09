@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:new_billing/core/themes/colors.dart';
 
 class CustomSnackbar {
-  static snackbarShow(BuildContext context, String text) {
+  static void snackbarShow(BuildContext context, String text) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         behavior: SnackBarBehavior.floating,

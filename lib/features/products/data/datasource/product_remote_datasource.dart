@@ -85,7 +85,7 @@ class ProductRemoteDatasourceImpl implements ProductRemoteDatasource {
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
-      print(response);
+      // print(response);
       if (jsonResponse.statusCode != 200) {
         throw ServerException(message: response["message"]);
       }

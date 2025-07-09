@@ -58,7 +58,7 @@ class FirmRemoteDataSourceImpl implements FirmRemoteDataSource {
     } on ServerException catch (e) {
       throw ServerException(message: e.message);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       throw ServerException(
         message: "Exception While Communicating with The Server.",
       );
@@ -78,7 +78,7 @@ class FirmRemoteDataSourceImpl implements FirmRemoteDataSource {
         headers: {"Content-Type": "application/json"},
       );
       final response = jsonDecode(jsonResponse.body);
-      print(response);
+      // print(response);
       if (jsonResponse.statusCode != 200) {
         throw ServerException(message: response["message"]);
       }
@@ -92,7 +92,7 @@ class FirmRemoteDataSourceImpl implements FirmRemoteDataSource {
     } on ServerException catch (e) {
       throw ServerException(message: e.message);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       throw ServerException(
         message: "Exception While Communicating With The Server.",
       );

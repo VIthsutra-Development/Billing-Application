@@ -23,15 +23,15 @@ class AddFirmCubit extends Cubit<AddFirmState> {
     required String firmLogo,
   }) async {
     // Print input values received from frontend
-    print("=== Add Firm Request ===");
-    print("Firm Name: $firmName");
-    print("Firm Address: $firmAddress");
-    print("Firm GST Number: $firmGstNumber");
-    print("Firm Phone Number: $firmPhoneNumber");
-    print("Firm Email: $firmEmail");
-    print("Firm PAN: $firmPan");
-    print("Firm Logo Path: $firmLogo");
-    print("========================");
+    // print("=== Add Firm Request ===");
+    // print("Firm Name: $firmName");
+    // print("Firm Address: $firmAddress");
+    // print("Firm GST Number: $firmGstNumber");
+    // print("Firm Phone Number: $firmPhoneNumber");
+    // print("Firm Email: $firmEmail");
+    // print("Firm PAN: $firmPan");
+    // print("Firm Logo Path: $firmLogo");
+    // print("========================");
 
     emit(AddFirmLoadingState());
 
@@ -49,11 +49,11 @@ class AddFirmCubit extends Cubit<AddFirmState> {
 
     response.fold(
       (failure) {
-        print("Add Firm Failed: ${failure.message}");
+        // print("Add Firm Failed: ${failure.message}");
         emit(AddFirmFailureState(message: failure.message));
       },
       (success) {
-        print("Add Firm Success: $success");
+        // print("Add Firm Success: $success");
         emit(AddFirmSuccessState(message: success));
       },
     );

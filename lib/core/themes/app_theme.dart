@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:new_billing/core/themes/colors.dart';
 
 class AppTheme {
-  static _borderStyle([Color? borderColor, double? borderWidth]) =>
+  static OutlineInputBorder _borderStyle([Color? borderColor, double? borderWidth]) =>
       OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),
         borderSide: BorderSide(

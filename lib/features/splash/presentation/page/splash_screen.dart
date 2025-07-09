@@ -124,7 +124,6 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return BlocListener<AutoLoginCubit, AutoLoginState>(
       listener: (context, state) {
-        // Add delay before navigation to let animations complete
         if (!_navigated) {
           _navigated = true;
           Future.delayed(const Duration(milliseconds: 1000), () {
@@ -142,11 +141,12 @@ class _SplashScreenState extends State<SplashScreen>
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                AppColors.blue.withOpacity(0.1),
+             colors: [
+                AppColors.blue.withValues(alpha: 0.1),
                 Colors.white,
-                AppColors.blue.withOpacity(0.05),
+                AppColors.blue.withValues(alpha: 0.05),
               ],
+
             ),
           ),
           child: Center(
@@ -164,12 +164,10 @@ class _SplashScreenState extends State<SplashScreen>
                         builder: (context, child) {
                           return Transform.rotate(
                             angle: _rotateAnimation.value,
-                            child: Container(
-                              child: Image.asset(
+                            child: Image.asset(
                                 "assets/pay.png",
                                 width: 120,
                               ),
-                            ),
                           );
                         },
                       ),
